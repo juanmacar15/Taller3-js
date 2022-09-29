@@ -3,15 +3,25 @@ addEventListener("DOMContentLoaded", (e) => {
     formulario.addEventListener("submit", (e) => {
         e.preventDefault();
 
-        // let est = document.getElementById("num1").value;
-        
-        let damas=1, caballeros=7, personas=0;
-        while(personas<42) {
-            damas++;
-            caballeros++;
-            personas=damas+caballeros;
+        let cantEstudiantes = document.getElementById("num1").value;
+        let cont = 1;
+        let nivelacion = 0;
+        while(cont <= cantEstudiantes) {
+            let nota1 = parseFloat(prompt('alumno #'+cont+'\ningrese la nota 1'))
+            let nota2 = parseFloat(prompt("ingrese la nota 2: "));
+            let nota3 = parseFloat(prompt("ingrese la nota 3: "));
+            let nota4 = parseFloat(prompt("ingrese la nota 4: "));
+            let nota5 =parseFloat(prompt("ingrese la nota 5: "));
+
+            let prom = (nota1 + nota2 + nota3 + nota4 + nota5) / 5;
+            cont++;
+            alert('su promedio es de: '+prom)
+
+            if(prom < 3){
+                nivelacion ++;
+            }
         }
-        document.getElementById('res1').innerHTML='habian '+damas+ ' damas';
+        document.getElementById('res1').innerHTML= nivelacion;
 
     })
 })
