@@ -3,22 +3,26 @@ addEventListener("DOMContentLoaded", (e) => {
     formulario.addEventListener("submit", (e) => {
         e.preventDefault();
 
+        let fund = 3, bd = 5, etica = 2;
         let cont = 1;
-        let gTotal = 0;
         let canVendedores = document.getElementById("num1").value;
 
         while(cont <= canVendedores){
-            let sb = parseInt(prompt('vendedor #'+cont+'\ningrese su sueldo base'));
-            let v1 = parseInt(prompt('ingrese el valor de su primera venta:'));
-            let v2 = parseInt(prompt('ingrese el valor de su segunda venta:'));
-            let v3 = parseInt(prompt('ingrese el valor de su tercera venta:'));
+            let nFund = parseInt(prompt('vendedor #'+cont+'\ningrese su nota de fundamentos: '));
+            let nBd = parseInt(prompt('ingrese su nota de BD: '));
+            let nEtica = parseInt(prompt('ingrese su nota de etica: '));
 
-            let comision = (v1 + v2 + v3) * 0.10;
-            gTotal = sb + comision;
+            let rFund = nFund * fund;
+            let rBd = nBd * bd;
+            let rEtica = nEtica * etica;
+
+            let sumaCreditos = fund + bd + etica;
+
+            let pP = (rFund + rBd + rEtica) / sumaCreditos;
+
             cont ++;
 
-            document.getElementById('res1').innerHTML='ganancias por comision: '+ comision+ ' pesos';
-            document.getElementById('res2').innerHTML='ganancias totales: '+ gTotal+ ' pesos';
+            alert('su promedio es de: \n   '+pP)
         }
         
 
