@@ -3,20 +3,21 @@ addEventListener("DOMContentLoaded", (e) => {
     formulario.addEventListener("submit", (e) => {
         e.preventDefault();
 
-        let pro = document.getElementById("num1").value;
+        let est = document.getElementById("num1").value;
+        const canNotas = 3
         let cont = 1;
 
-        while(cont <= pro){
-            let n1 = parseInt(prompt('procedimiento #'+cont+'\ningrese el primer numero:'));
-            let n2 = parseInt(prompt('ingrese el segundo numero: '));
+        while(cont <= est){
+            let nombre = prompt('estudiante #'+cont+'\ningrese su nombre:');
+            let apellido = prompt('ingrese su apellido: ');
+            let n1 = parseFloat(prompt('ingrese la nota 1: '));
+            let n2 = parseFloat(prompt('ingrese la nota 2: '));
+            let n3 = parseFloat(prompt('ingrese la nota 3: '));
 
-            let suma = n1 + n2;
-            let resta = n1 - n2;
-            let mult = n1 * n2;
-            let div = n1 / n2;
+            let prom = (n1 + n2 + n3) / canNotas;
+
+            alert('el promedio del estudiante '+nombre+' '+apellido+ ' es: \nnota:'+prom);
             cont ++;
-
-            alert('suma: '+suma+ '\nresta: '+resta+'\nmultiplicacion: '+mult+ '\ndivision: '+div);
         }
 
     })
