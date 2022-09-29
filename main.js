@@ -3,24 +3,21 @@ addEventListener("DOMContentLoaded", (e) => {
     formulario.addEventListener("submit", (e) => {
         e.preventDefault();
 
-        let canGallinas = document.getElementById("num1").value;
-
-        let peso = 0;
-        let alt = 0;
-        let precio = 0;
-        let calidad = 0;
+        let pro = document.getElementById("num1").value;
         let cont = 1;
 
-        while(cont <= canGallinas){
-            peso = parseInt(prompt('ingrese el peso de la gallina '+ cont))
-            alt = parseInt(prompt('ingrese la altura de la gallina '))
-            let canHuevos = parseInt(prompt('ingrese la cantidad de huevo que pone la gallina:'))
-            calidad =((peso * alt) / canHuevos) + calidad;
+        while(cont <= pro){
+            let n1 = parseInt(prompt('procedimiento #'+cont+'\ningrese el primer numero:'));
+            let n2 = parseInt(prompt('ingrese el segundo numero: '));
+
+            let suma = n1 + n2;
+            let resta = n1 - n2;
+            let mult = n1 * n2;
+            let div = n1 / n2;
             cont ++;
+
+            alert('suma: '+suma+ '\nresta: '+resta+'\nmultiplicacion: '+mult+ '\ndivision: '+div);
         }
-        let promedio = calidad / canGallinas;
-        precio = promedio * 1000;
-        document.getElementById('res1').innerHTML ="el precio por kilo de huevo es: " + precio;
 
     })
 })
