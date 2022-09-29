@@ -4,32 +4,35 @@ addEventListener("DOMContentLoaded", (e) => {
         e.preventDefault();
 
         let cant = document.getElementById("num1").value;
-        let  turismo = 0;
-        let autobus = 0;
-        let camion = 0;
-        let motocicleta = 0;
-        cont = 1;
+        let amarilla = 0
+        let rosa = 0
+        let roja = 0
+        let verde = 0
+        let azul = 0
+        let cont = 1;
 
-        while( cont <= cant){
-            let tipoV = prompt('vehiculo #'+cont+' \n ingrese el tipo de vehiculo:')
-            if(tipoV ==  'turismo'){
-                turismo ++;
+        while (cont <= cant) {
+            let nPlaca = prompt('vehiculo #' + cont + ' \n ingrese el ultimo dijito de su placa: ')
+
+            if (nPlaca == 1 || nPlaca == 2) {
+                amarilla ++;
             }
-            else if(tipoV == 'autobus'){
-                autobus ++;
+            else if(nPlaca == 3 || nPlaca == 4){
+                rosa ++;
             }
-            else if(tipoV == 'camion'){
-                camion ++;
+            else if (nPlaca == 5 || nPlaca == 6){
+                roja ++;
+            }
+            else if(nPlaca == 8 || nPlaca == 9){
+                verde ++;
             }
             else{
-                motocicleta ++;
+                azul ++;
             }
-            cont ++;
+
+            cont++;
         }
-        let pTu = (turismo / 200) + 100;
-        let pAu = (turismo / 200) + 100;
-        let pCam = (turismo / 200) + 100;
-        let pMoto = (turismo / 200) + 100;
-        alert('% en turismo: '+pTu+'\n% en autobus: '+pAu+'\n% en camion: '+pCam+'\n% en motocicleta: '+pMoto);
+        alert('# de placas color amarillo: '+amarilla+'\n# de placas color rosa: '+rosa+'\n# de placas color rojo: '+roja+'\n# de placas color averde: '+verde+'\n# de placas color azul: '+azul);
+
     })
 })
